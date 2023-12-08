@@ -6,6 +6,8 @@ The editor potion of the website will allow the users to login, create and join 
 ## Login Process
 The first time the user connects to the website they are taken to an authentication page, where they can log into the site. To achieve this either the website can manage user passwords and login info, or login buttons like "Login with Google" or "Login with Github" can be used, to shift more of the burden of security to tried and tested platforms. 
 
+Additionally the user should probably also connect there Discord account to this as well, or at least the option should be available.
+
 ## Editor Structure
 ### Dashboard
 The dashboard is a page where the user can see and access projects they are a part of, as well as create new projects and join existing ones. This page also serves as a point for accessing any other important parts of the website, such as settings.
