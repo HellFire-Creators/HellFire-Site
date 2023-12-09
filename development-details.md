@@ -8,4 +8,7 @@ Production Host: Undecided, maybe [Render](render.com) (see [issue #6](https://g
 1. Create and clone a branch of the [dev](https://github.com/HellFire-Creators/HellFire-Site/tree/dev) branch for whatever your implementing. Use a descriptive name.
 2. Install [pipx](https://github.com/pypa/pipx?tab=readme-ov-file#install-pipx)
 3. Install [Poetry](https://python-poetry.org/docs/) with pipx: ```pipx install poetry```
+4. Wherever you cloned your branch, run ```poetry shell``` to activate the virtual enviroment
+5. You can use ```python manage.py runserver``` to start the server
+6. See the [Django Documentation](https://docs.djangoproject.com/en/5.0/) for more
 
