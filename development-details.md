@@ -1,4 +1,5 @@
 # Overview
+**CURRENT STATE**: Literally just me messing around to get familiar with Django, will start work on actual site tommorow
 Framework:  [Django](https://www.djangoproject.com/)  
 Venv Manager: [Poetry](https://python-poetry.org/)  
 Development/Demo Host: [Render](render.com)  
