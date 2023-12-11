@@ -1,10 +1,12 @@
 from django.shortcuts import render
-
 from django.http import HttpResponse
 
+from django.contrib.auth.decorators import login_required
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the editor index.")
 
-def show_path(request, path):
-    return HttpResponse(f'Your path is {path}')
+@login_required
+def dashboard(request):
+    return render(request, 'dashboard.html')
+
+def authenticate(request):
+    return render(request, 'authenticate.html')
