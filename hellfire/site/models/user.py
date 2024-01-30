@@ -1,9 +1,10 @@
 
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String
+from flask_login import UserMixin
 
-from api.extensions import db
+from hellfire.extensions import db
 
-class User(db.Model):
+class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
     id = Column(Integer, primary_key=True)
@@ -18,3 +19,4 @@ class User(db.Model):
 
     def __init__(self, github_id):
         self.github_id = github_id
+

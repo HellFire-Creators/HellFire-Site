@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Home</h1>
+<h2>Projects</h2>
+
+<form target="/", method="POST">
+    <label for="fname">Project Name: </label>
+    <input type="text" id="name" name="name" value="Extremely Good Project Name"><br>
+    <label for="lname">Project Description: </label>
+    <input type="text" id="description" name="description" value="Write the description or else"><br>
+    <input type="submit" value="Create new project">
+  </form> 
+
+{% for project in user_projects %}
+    <li>
+        <a href="{{ url_for(request.endpoint) + project["id"]|string }}">{{ project["name"] }}</a>
+    </li>
+{% endfor %}
+
+{% endblock content %}
