@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ project_name }}</h1>
+    <hr>
+    <a href=" {{ url_for('projects.project_roles', project_name = project_name )}} " > Permissions </a>
+{% endblock %}

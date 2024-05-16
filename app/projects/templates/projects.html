@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Projects</h1>
+    <form action=" {{ url_for('projects.projects') }}" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.project_name.label }}<br>
+            {{ form.project_name(size=64) }}<br>
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+    <hr>
+
+    {% for project in projects %}
+    - <a href=" {{ url_for('projects.project', project_name=project.name) }} "> {{ project.name }} </a>  <br>
+    {% endfor %}   
+
+{% endblock %}

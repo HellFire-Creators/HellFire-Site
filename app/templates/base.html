@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - HellFire</title>
+      {% else %}
+      <title>HellfFire</title>
+      {% endif %}
+      <style>
+        .inline {
+          display: inline-block;
+        }
+      
+        .link-button {
+          border: none;
+          background: none;
+          color: blue; /* Change color as needed */
+          text-decoration: underline;
+          cursor: pointer;
+          padding: 0;
+          margin: 0;
+        }
+      
+        .link-button:focus {
+          outline: none;
+        }
+      </style>      
+      
+    </head>
+    <body>
+        <a href="{{ url_for('index.index') }}">Hellfire</a>
+        <form method="post" action="{{ url_for('auth.logout') }}" class="inline">
+        <input type="hidden" name="extra_submit_param" value="extra_submit_value">
+        <button type="submit" name="submit_param" value="submit_value" class="link-button">
+            Logout
+        </button>
+        </form>
+        <a href="{{ url_for('user.user', username=current_user.username) }}">Profile</a>
+        <a href="{{ url_for('projects.projects') }}">Projects</a>
+
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

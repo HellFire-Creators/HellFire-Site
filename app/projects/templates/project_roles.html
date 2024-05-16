@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Roles for {{ project_name }}</h1>
+
+    {% for role in project_roles %}
+    - {{ role }} : 
+        {% for user in project_roles[role] %}
+            {{ user }}
+            {% if not loop.last %}
+                , 
+            {% endif %}
+        {% endfor %}
+    <br>
+    {% endfor %}   
+    <br>
+    <hr>
+
+    <form action="{{ url_for('projects.project_roles', project_name=project_name) }}" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.roles_dropdown.label }}<br><br>
+            {{ form.roles_dropdown() }}
+        </p>
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <hr>
+
+
+{% endblock %}
